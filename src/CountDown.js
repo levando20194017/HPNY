@@ -46,21 +46,29 @@ function CountDown() {
       <div className="wrapper">
         <h1>Thời gian chỉ còn...</h1>
         <div className={`box-time `}>
-          <div className="time">
+          <div>
             <p>Ngày</p>
-            <span id="days">day</span>
+            <div className="time">
+              <span id="days">day</span>
+            </div>
           </div>
-          <div className="time">
+          <div>
             <p>Giờ</p>
-            <span id="hours">hours</span>
+            <div className="time">
+              <span id="hours">hours</span>
+            </div>
           </div>
-          <div className="time">
+          <div>
             <p>Phút</p>
-            <span id="minutes">minute</span>
+            <div className="time">
+              <span id="minutes">minute</span>
+            </div>
           </div>
-          <div className="time">
+          <div>
             <p>Giây</p>
-            <span id="seconds">seconds</span>
+            <div className="time">
+              <span id="seconds">seconds</span>
+            </div>
           </div>
         </div>
       </div>

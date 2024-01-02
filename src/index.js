@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CountDown from './CountDown';
 import FireWork from './Firework';
+import Test from './Test';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/firework",
     element: <FireWork />,
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
 ]);
 
