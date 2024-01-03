@@ -1,16 +1,27 @@
 import "./CountDown.css";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import ParticleTextEffect from "./particleTextEffect";
+import "animate.css";
 
 function CountDown() {
   const navigate = useNavigate();
   const [isAnimating, setIsAnimating] = useState(false);
+  const [effectText, setEffectText] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => setIsAnimating(false), 950);
     }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEffectText(true);
+      setTimeout(() => setEffectText(false), 950);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -44,7 +55,10 @@ function CountDown() {
         <div className="clouds"></div>
       </div>
       <div className="wrapper">
-        <h1>Thời gian chỉ còn...</h1>
+        <h1 class={effectText ? "animate__animated animate__flipInX" : ""}>
+          Thời gian chỉ còn...
+        </h1>
+        <ParticleTextEffect text="Thời gian chỉ còn..." type="hearts" />
         <div className={`box-time `}>
           <div>
             <p>Ngày</p>

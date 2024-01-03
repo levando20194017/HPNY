@@ -1,164 +1,164 @@
 import React, { useEffect } from "react";
 
 const ParticleTextEffect = ({ text, type, className }) => {
-    useEffect(() => {
-        initparticles();
-    }, []);
+  useEffect(() => {
+    initparticles();
+  }, []);
 
-    const initparticles = () => {
-        switch (type) {
-            case "bubbles":
-                bubbles();
-                break;
-            case "hearts":
-                hearts();
-                break;
-            case "lines":
-                lines();
-                break;
-            case "confetti":
-                confetti();
-                break;
-            case "fire":
-                fire();
-                break;
-            case "sunbeams":
-                sunbeams();
-                break;
+  const initparticles = () => {
+    switch (type) {
+      case "bubbles":
+        bubbles();
+        break;
+      case "hearts":
+        hearts();
+        break;
+      case "lines":
+        lines();
+        break;
+      case "confetti":
+        confetti();
+        break;
+      case "fire":
+        fire();
+        break;
+      case "sunbeams":
+        sunbeams();
+        break;
 
-            default:
-                break;
-        }
-    };
+      default:
+        break;
+    }
+  };
 
-    const rnd = (m, n) => {
-        m = parseInt(m);
-        n = parseInt(n);
+  const rnd = (m, n) => {
+    m = parseInt(m);
+    n = parseInt(n);
 
-        return Math.floor(Math.random() * (n - m + 1)) + m;
-    };
+    return Math.floor(Math.random() * (n - m + 1)) + m;
+  };
 
-    const bubbles = () => {
-        const element = document.querySelector(".particletext.bubbles");
-        const bubblecount = (element.offsetWidth / 50) * 10;
+  const bubbles = () => {
+    const element = document.querySelector(".particletext.bubbles");
+    const bubblecount = (element.offsetWidth / 50) * 10;
 
-        for (let i = 0; i <= bubblecount; i++) {
-            const size = rnd(40, 80) / 10;
-            const span = document.createElement("span");
-            span.classList.add("particle");
+    for (let i = 0; i <= bubblecount; i++) {
+      const size = rnd(40, 80) / 10;
+      const span = document.createElement("span");
+      span.classList.add("particle");
 
-            span.style.top = rnd(20, 80) + "%";
-            span.style.left = rnd(0, 95) + "%";
-            span.style.width = size + "px";
-            span.style.height = size + "px";
-            span.style.animationDelay = rnd(0, 30) / 10 + "s";
+      span.style.top = rnd(20, 80) + "%";
+      span.style.left = rnd(0, 95) + "%";
+      span.style.width = size + "px";
+      span.style.height = size + "px";
+      span.style.animationDelay = rnd(0, 30) / 10 + "s";
 
-            element.appendChild(span);
-        }
-    };
+      element.appendChild(span);
+    }
+  };
 
-    const hearts = () => {
-        const element = document.querySelector(".particletext.hearts");
-        const heartcount = (element.offsetWidth / 50) * 5;
+  const hearts = () => {
+    const element = document.querySelector(".particletext.hearts");
+    const heartcount = (element.offsetWidth / 50) * 5;
 
-        for (let i = 0; i <= heartcount; i++) {
-            const size = rnd(60, 120) / 10;
-            const span = document.createElement("span");
-            span.classList.add("particle");
+    for (let i = 0; i <= heartcount; i++) {
+      const size = rnd(60, 120) / 10;
+      const span = document.createElement("span");
+      span.classList.add("particle");
 
-            span.style.top = rnd(20, 80) + "%";
-            span.style.left = rnd(0, 95) + "%";
-            span.style.width = size + "px";
-            span.style.height = size + "px";
-            span.style.animationDelay = rnd(0, 30) / 10 + "s";
+      span.style.top = rnd(20, 80) + "%";
+      span.style.left = rnd(0, 95) + "%";
+      span.style.width = size + "px";
+      span.style.height = size + "px";
+      span.style.animationDelay = rnd(0, 30) / 10 + "s";
 
-            element.appendChild(span);
-        }
-    };
+      element.appendChild(span);
+    }
+  };
 
-    const lines = () => {
-        const element = document.querySelector(".particletext.lines");
+  const lines = () => {
+    const element = document.querySelector(".particletext.lines");
 
-        const linecount = (element.offsetWidth / 50) * 10;
+    const linecount = (element.offsetWidth / 50) * 10;
 
-        for (let i = 0; i <= linecount; i++) {
-            const span = document.createElement("span");
-            span.classList.add("particle");
+    for (let i = 0; i <= linecount; i++) {
+      const span = document.createElement("span");
+      span.classList.add("particle");
 
-            span.style.top = rnd(-30, 30) + "%";
-            span.style.left = rnd(-10, 110) + "%";
-            span.style.width = rnd(1, 3) + "px";
-            span.style.height = rnd(20, 80) + "%";
-            span.style.animationDelay = "-" + rnd(0, 30) / 10 + "s";
+      span.style.top = rnd(-30, 30) + "%";
+      span.style.left = rnd(-10, 110) + "%";
+      span.style.width = rnd(1, 3) + "px";
+      span.style.height = rnd(20, 80) + "%";
+      span.style.animationDelay = "-" + rnd(0, 30) / 10 + "s";
 
-            element.appendChild(span);
-        }
-    };
+      element.appendChild(span);
+    }
+  };
 
-    const confetti = () => {
-        const element = document.querySelector(".particletext.confetti");
-        const confetticount = (element.offsetWidth / 50) * 10;
+  const confetti = () => {
+    const element = document.querySelector(".particletext.confetti");
+    const confetticount = (element.offsetWidth / 50) * 10;
 
-        for (let i = 0; i <= confetticount; i++) {
-            const span = document.createElement("span");
-            span.classList.add("particle");
-            span.classList.add(`c${rnd(1, 2)}`);
+    for (let i = 0; i <= confetticount; i++) {
+      const span = document.createElement("span");
+      span.classList.add("particle");
+      span.classList.add(`c${rnd(1, 2)}`);
 
-            span.style.top = rnd(10, 50) + "%";
-            span.style.left = rnd(0, 100) + "%";
-            span.style.width = rnd(6, 8) + "px";
-            span.style.height = rnd(3, 4) + "px";
-            span.style.animationDelay = rnd(0, 30) / 10 + "s";
+      span.style.top = rnd(10, 50) + "%";
+      span.style.left = rnd(0, 100) + "%";
+      span.style.width = rnd(6, 8) + "px";
+      span.style.height = rnd(3, 4) + "px";
+      span.style.animationDelay = rnd(0, 30) / 10 + "s";
 
-            element.appendChild(span);
-        }
-    };
+      element.appendChild(span);
+    }
+  };
 
-    const fire = () => {
-        const element = document.querySelector(".particletext.fire");
-        const firecount = (element.offsetWidth / 50) * 20;
+  const fire = () => {
+    const element = document.querySelector(".particletext.fire");
+    const firecount = (element.offsetWidth / 50) * 20;
 
-        for (let i = 0; i <= firecount; i++) {
-            const size = rnd(8, 12);
-            const span = document.createElement("span");
-            span.classList.add("particle");
+    for (let i = 0; i <= firecount; i++) {
+      const size = rnd(8, 12);
+      const span = document.createElement("span");
+      span.classList.add("particle");
 
-            span.style.top = rnd(40, 70) + "%";
-            span.style.left = rnd(-10, 100) + "%";
-            span.style.width = size + "px";
-            span.style.height = size + "px";
-            span.style.animationDelay = rnd(0, 20) / 10 + "s";
+      span.style.top = rnd(40, 70) + "%";
+      span.style.left = rnd(-10, 100) + "%";
+      span.style.width = size + "px";
+      span.style.height = size + "px";
+      span.style.animationDelay = rnd(0, 20) / 10 + "s";
 
-            element.appendChild(span);
-        }
-    };
+      element.appendChild(span);
+    }
+  };
 
-    const sunbeams = () => {
-        const element = document.querySelector(".particletext.sunbeams");
-        const linecount = (element.offsetWidth / 50) * 10;
+  const sunbeams = () => {
+    const element = document.querySelector(".particletext.sunbeams");
+    const linecount = (element.offsetWidth / 50) * 10;
 
-        for (let i = 0; i <= linecount; i++) {
-            const span = document.createElement("span");
-            span.classList.add("particle");
+    for (let i = 0; i <= linecount; i++) {
+      const span = document.createElement("span");
+      span.classList.add("particle");
 
-            span.style.top = rnd(-50, 0) + "%";
-            span.style.left = rnd(0, 100) + "%";
-            span.style.width = rnd(1, 3) + "px";
-            span.style.height = rnd(80, 160) + "%";
-            span.style.animationDelay = "-" + rnd(0, 30) / 10 + "s";
+      span.style.top = rnd(-50, 0) + "%";
+      span.style.left = rnd(0, 100) + "%";
+      span.style.width = rnd(1, 3) + "px";
+      span.style.height = rnd(80, 160) + "%";
+      span.style.animationDelay = "-" + rnd(0, 30) / 10 + "s";
 
-            element.appendChild(span);
-        }
-    };
+      element.appendChild(span);
+    }
+  };
 
-    const bubbleHTMLType = () => {
-        return (
-            <>
-                <div className="textcontainer">
-                    <span className="particletext bubbles">{text}</span>
-                </div>
-                <style jsx="true">
-                    {`
+  const bubbleHTMLType = () => {
+    return (
+      <>
+        <div className="textcontainer">
+          <span className="particletext bubbles">{text}</span>
+        </div>
+        <style jsx="true">
+          {`
             .particletext.bubbles > .particle {
               opacity: 0;
               position: absolute;
@@ -181,19 +181,19 @@ const ParticleTextEffect = ({ text, type, className }) => {
               }
             }
           `}
-                </style>
-            </>
-        );
-    };
+        </style>
+      </>
+    );
+  };
 
-    const heartsHTMLType = () => {
-        return (
-            <>
-                <div className="textcontainer">
-                    <span className="particletext hearts">{text}</span>
-                </div>
-                <style jsx="true">
-                    {`
+  const heartsHTMLType = () => {
+    return (
+      <>
+        <div className="textcontainer">
+          <span className="particletext hearts">{text}</span>
+        </div>
+        <style jsx="true">
+          {`
             .particletext.hearts > .particle {
               opacity: 0;
               position: absolute;
@@ -236,19 +236,19 @@ const ParticleTextEffect = ({ text, type, className }) => {
               }
             }
           `}
-                </style>
-            </>
-        );
-    };
+        </style>
+      </>
+    );
+  };
 
-    const getLinesHTMLType = () => {
-        return (
-            <>
-                <div className="textcontainer">
-                    <span className="particletext lines">{text}</span>
-                </div>
-                <style jsx="true">
-                    {`
+  const getLinesHTMLType = () => {
+    return (
+      <>
+        <div className="textcontainer">
+          <span className="particletext lines">{text}</span>
+        </div>
+        <style jsx="true">
+          {`
             .particletext.lines > .particle {
               position: absolute;
               background-color: rgba(244, 67, 54, 0.5);
@@ -269,19 +269,19 @@ const ParticleTextEffect = ({ text, type, className }) => {
               }
             }
           `}
-                </style>
-            </>
-        );
-    };
+        </style>
+      </>
+    );
+  };
 
-    const getConfettiHTMLType = () => {
-        return (
-            <>
-                <div className="textcontainer">
-                    <span className="particletext confetti">{text}</span>
-                </div>
-                <style jsx="true">
-                    {`
+  const getConfettiHTMLType = () => {
+    return (
+      <>
+        <div className="textcontainer">
+          <span className="particletext confetti">{text}</span>
+        </div>
+        <style jsx="true">
+          {`
             .particletext.confetti > .particle {
               opacity: 0;
               position: absolute;
@@ -316,19 +316,19 @@ const ParticleTextEffect = ({ text, type, className }) => {
               }
             }
           `}
-                </style>
-            </>
-        );
-    };
+        </style>
+      </>
+    );
+  };
 
-    const getFireHTMLType = () => {
-        return (
-            <>
-                <div className="textcontainer">
-                    <span className="particletext fire">{text}</span>
-                </div>
-                <style jsx="true">
-                    {`
+  const getFireHTMLType = () => {
+    return (
+      <>
+        <div className="textcontainer">
+          <span className="particletext fire">{text}</span>
+        </div>
+        <style jsx="true">
+          {`
             .particletext.fire > .particle {
               position: absolute;
               background-color: rgba(255, 193, 7, 0.5);
@@ -372,19 +372,19 @@ const ParticleTextEffect = ({ text, type, className }) => {
               }
             }
           `}
-                </style>
-            </>
-        );
-    };
+        </style>
+      </>
+    );
+  };
 
-    const getSunBeamHTMLType = () => {
-        return (
-            <>
-                <div className="textcontainer">
-                    <span className="particletext sunbeams">{text}</span>
-                </div>
-                <style jsx="true">
-                    {`
+  const getSunBeamHTMLType = () => {
+    return (
+      <>
+        <div className="textcontainer">
+          <span className="particletext sunbeams">{text}</span>
+        </div>
+        <style jsx="true">
+          {`
             .particletext.sunbeams > .particle {
               position: absolute;
               background-color: rgba(253, 216, 53, 0.5);
@@ -425,49 +425,48 @@ const ParticleTextEffect = ({ text, type, className }) => {
               }
             }
           `}
-                </style>
-            </>
+        </style>
+      </>
+    );
+  };
+
+  const getEffectType = () => {
+    switch (type) {
+      case "bubbles":
+        return bubbleHTMLType();
+
+      case "hearts":
+        return heartsHTMLType();
+
+      case "lines":
+        return getLinesHTMLType();
+
+      case "confetti":
+        return getConfettiHTMLType();
+
+      case "fire":
+        return getFireHTMLType();
+
+      case "sunbeams":
+        return getSunBeamHTMLType();
+
+      default:
+        return (
+          <div className="textcontainer">
+            <span className={`particletext ${type}`}>{text}</span>
+          </div>
         );
-    };
+    }
+  };
 
-    const getEffectType = () => {
-        switch (type) {
-            case "bubbles":
-                return bubbleHTMLType();
-
-            case "hearts":
-                return heartsHTMLType();
-
-            case "lines":
-                return getLinesHTMLType();
-
-            case "confetti":
-                return getConfettiHTMLType();
-
-            case "fire":
-                return getFireHTMLType();
-
-            case "sunbeams":
-                return getSunBeamHTMLType();
-
-            default:
-                return (
-                    <div className="textcontainer">
-                        <span className={`particletext ${type}`}>{text}</span>
-                    </div>
-                );
-        }
-    };
-
-    return (
-        <>
-            {getEffectType(type)}
-            <style jsx="true">
-                {`
+  return (
+    <>
+      {getEffectType(type)}
+      <style jsx="true">
+        {`
           .textcontainer {
             text-align: center;
-            font-family: inherit;
-            font-size: inherit;
+            font-size: 60px;
           }
 
           .particletext {
@@ -476,9 +475,9 @@ const ParticleTextEffect = ({ text, type, className }) => {
             position: relative;
           }
         `}
-            </style>
-        </>
-    );
+      </style>
+    </>
+  );
 };
 
 export default ParticleTextEffect;
