@@ -37,7 +37,7 @@ const convertToBase64 = (imageUrl) => {
 };
 
 // Sử dụng hàm convertToBase64
-convertToBase64('https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/241955591_1921609911327664_263385309250914838_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeHztS4hNvL8A1Tb_wQf1bf5W2lkIeMkN9tbaWQh4yQ322_35kuwp5C81lvhyJQBqvpuy7al9nnHKYNTyLCQaZEd&_nc_ohc=RIBOjwOUoRkAX85jvQd&_nc_ht=scontent.fhan5-8.fna&oh=00_AfChBtunVTeTRsL3n9qU4gNS68WB0Vl1xf5HN9cnbF25FQ&oe=65A87038')
+convertToBase64('https://th.bing.com/th/id/OIP.UFEKzDjRbqdbPLXZvqxnDQHaGB?rs=1&pid=ImgDetMain')
   .then((base64Image) => {
     console.log(base64Image);
     // Thực hiện các công việc khác với base64Image
