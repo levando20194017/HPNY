@@ -1753,7 +1753,7 @@ body {
   justify-content: center;
   align-items: center;
   transform: scale(0);
-  transition: all 0.5s;
+  transition: all 2.5s;
 }
 
 .slider3.active {
