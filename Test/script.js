@@ -11,42 +11,43 @@
 // var base64 = getBase64Image(document.getElementById("imageid"));
 
 function getBase64FromImage(imageUrl) {
-    return new Promise((resolve, reject) => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const img = new Image();
+  return new Promise((resolve, reject) => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
 
-        img.crossOrigin = 'Anonymous';
-        img.onload = function () {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
+    img.crossOrigin = "Anonymous";
+    img.onload = function () {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
 
-            canvas.toBlob(function (blob) {
-                const reader = new FileReader();
-                reader.onloadend = function () {
-                    resolve(reader.result);
-                };
-                reader.onerror = function (error) {
-                    reject(error);
-                };
-                reader.readAsDataURL(blob);
-            });
+      canvas.toBlob(function (blob) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+          resolve(reader.result);
         };
-
-        img.onerror = function (error) {
-            reject(error);
+        reader.onerror = function (error) {
+          reject(error);
         };
+        reader.readAsDataURL(blob);
+      });
+    };
 
-        img.src = imageUrl;
-    });
+    img.onerror = function (error) {
+      reject(error);
+    };
+
+    img.src = imageUrl;
+  });
 }
 
-const imageUrl = 'https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/418217390_1188100345908649_3496970687857150471_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeG8PDNSXRg2jGOqD-RMLGOE6bb9yizatz7ptv3KLNq3PgLtpqHpYLwJol9HQ07VIzlqD38XRI1dZqr6zEXwWHX6&_nc_ohc=jALLw4Zx_00AX-p5kPT&_nc_ht=scontent.fhan5-6.fna&oh=00_AfC12oZAMwYg0OZlznPulBo-_wRIEx8Ih4lU19-7MdKRLg&oe=65A900BF';
+const imageUrl =
+  "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/420162527_1193601862025164_5333133678617864039_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeEG4uqQe0WCKrZF8GC54pou5kNKKMX0DurmQ0ooxfQO6oQ9HK3RTe0q1iJKlhqPNp9FV652Sxe6Vq4LAqZx1YLb&_nc_ohc=_Jd2y6yysc4AX9Rl9OT&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCtSJA6EEqu5ZsYC0kcTLnzcJYxZorBdaZ7YN6MP0YmwQ&oe=65AEF0DB";
 getBase64FromImage(imageUrl)
-    .then(base64Data => {
-        console.log(base64Data); // Base64 data of the image
-    })
-    .catch(error => {
-        console.error(error);
-    });
+  .then((base64Data) => {
+    console.log(base64Data); // Base64 data of the image
+  })
+  .catch((error) => {
+    console.error(error);
+  });

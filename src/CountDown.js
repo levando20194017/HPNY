@@ -25,7 +25,7 @@ function CountDown() {
     return () => clearInterval(interval);
   }, []);
 
-  var fut = new Date("feb 10, 2024 00:00:00").getTime();
+  var fut = new Date("jan 30, 2024 19:36:00").getTime();
   let x = setInterval(function stime() {
     var now = new Date().getTime();
     var D = fut - now;
