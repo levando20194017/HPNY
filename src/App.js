@@ -24,7 +24,8 @@ import BigFlower1 from "./assets/images/big-flower1.png";
 import BigFlower2 from "./assets/images/big-flower2.png";
 import ApricotBlossom from "./assets/images/apricot-blossom.png";
 import MySong from "./assets/images/nhac.mp3";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReactDOM from "react-dom";
 
 function App() {
   const [slider3Active, setSlider3Active] = useState(false);
@@ -69,15 +70,40 @@ function App() {
   const handleClickMail = () => {
     // const slider3 = document.querySelector(".slider3");
     // slider3.classList.add("active");
-    setSlider3Active(true)
+    setSlider3Active(true);
   };
   const handleClickIcon = () => {
     // const slider3 = document.querySelector(".slider3");
     // slider3.classList.remove("active");
-    setSlider3Active(false)
+    setSlider3Active(false);
+  };
+
+  const [buttonPosition, setButtonPosition] = useState({
+    top: "50%",
+    left: "50%",
+  });
+  const slider3RightRef = useRef(null);
+
+  const handleMouseMove = () => {
+    // Tính toán vị trí ngẫu nhiên
+    const slider3RightElement = ReactDOM.findDOMNode(slider3RightRef.current);
+    const slider3RightRect = slider3RightElement.getBoundingClientRect();
+
+    const randomTop = Math.random() * (slider3RightRect.height - 40) + 40;
+    const randomLeft = Math.random() * (slider3RightRect.width - 80) + 40;
+
+    setButtonPosition({
+      top: `${randomTop}px`,
+      left: `${randomLeft}px`,
+    });
+  };
+  const [showHappy, setShowHappy] = useState(false);
+
+  const handleShowTextHappy = () => {
+    setShowHappy(true);
   };
   return (
-    <div>
+    <div className="page-happy-new-year">
       <div className="box-slider">
         <div className="slider1">
           <img src={Bgr} alt="" />
@@ -250,57 +276,85 @@ function App() {
               <div className="lanterns-content">
                 <img src={Lanterns} alt="" />
               </div>
-            </div>
-            <div className="box-big_flowers">
-              <img src={BigFlower} alt="" />
-              <img src={BigFlower} alt="" />
-              <img src={BigFlower} alt="" />
-              <img src={BigFlower1} alt="" />
-              <img src={BigFlower1} alt="" />
-              <img src={BigFlower2} alt="" />
-              <img src={BigFlower2} alt="" />
-              <img src={BigFlower2} alt="" />
-            </div>
-            <div className="box-circle_left">
-              <div className="circle_left">
-                <img src={CircularPattern} alt="" />
-                <div className="text-content">
-                  <h2>Happy New</h2>
-                  <h1>Year</h1>
-                  <span>2024</span>
+              <div className="box-big_flowers">
+                <img src={BigFlower} alt="" />
+                <img src={BigFlower} alt="" />
+                <img src={BigFlower} alt="" />
+                <img src={BigFlower1} alt="" />
+                <img src={BigFlower1} alt="" />
+                <img src={BigFlower2} alt="" />
+                <img src={BigFlower2} alt="" />
+                <img src={BigFlower2} alt="" />
+              </div>
+              <div className="box-circle_left">
+                <div className="circle_left">
+                  <img src={CircularPattern} alt="" />
+                  <div className="text-content">
+                    <h2>Happy New</h2>
+                    <h1>Year</h1>
+                    <span>2024</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="apricot_blossom">
-              <img src={ApricotBlossom} alt="" />
-              <img src={ApricotBlossom} alt="" />
-              <img src={ApricotBlossom} alt="" />
-              <img src={ApricotBlossom} alt="" />
-              <img src={ApricotBlossom} alt="" />
-              <img src={ApricotBlossom} alt="" />
-            </div>
-          </div>
-          <div className="right">
-            <div className="content">
-              <div className="title">
-                <h1>&#129505;Gửi em!</h1>
-              </div>
-              <p>
-                Năm mới, anh chỉ chúc em được nhiều sức khỏe thôi. Còn về hạnh
-                phúc và niềm vui, anh mong rằng chính mình sẽ là người mang những
-                điều đó đến với em. Yêu em nhiều! Năm mới đến rồi, một năm qua
-                thật đặc biệt với anh và cả em nữa. Năm mới đến đồng nghĩa với
-                việc anh lại được nối dài năm tháng yêu thương chăm sóc em. Anh
-                chúc em tràn đầy hạnh phúc ngọt ngào hãy gìn giữ và nuôi dưỡng
-                tình yêu của chúng mình em nhé.
-              </p>
-              <div className="fixedContent">
-                <h3>Người gửi: Lê Văn Do</h3>
+              <div className="apricot_blossom">
+                <img src={ApricotBlossom} alt="" />
+                <img src={ApricotBlossom} alt="" />
+                <img src={ApricotBlossom} alt="" />
+                <img src={ApricotBlossom} alt="" />
+                <img src={ApricotBlossom} alt="" />
+                <img src={ApricotBlossom} alt="" />
               </div>
             </div>
+            <div className="right" ref={slider3RightRef}>
+              <div className="content">
+                {!showHappy && (
+                  <div>
+                    <div className="title">Cậu có muốn nhận lì xì không?</div>
+                    <div>
+                      <div>
+                        <button
+                          className="slide-button"
+                          style={{
+                            position: "absolute",
+                            top: buttonPosition.top,
+                            left: buttonPosition.left,
+                          }}
+                          onMouseMove={handleMouseMove}
+                        >
+                          Có
+                        </button>
+                      </div>
+                      <div>
+                        <button onClick={handleShowTextHappy}>Không</button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {showHappy && (
+                  <>
+                    <div className="title">
+                      <h1 style={{ textAlign: "center" }}>&#129505;Gửi em!</h1>
+                    </div>
+                    <p>
+                      Năm mới, anh chỉ chúc em được nhiều sức khỏe thôi. Còn về
+                      hạnh phúc và niềm vui, anh mong rằng chính mình sẽ là
+                      người mang những điều đó đến với em. Yêu em nhiều! Năm mới
+                      đến rồi, một năm qua thật đặc biệt với anh và cả em nữa.
+                      Năm mới đến đồng nghĩa với việc anh lại được nối dài năm
+                      tháng yêu thương chăm sóc em. Anh chúc em tràn đầy hạnh
+                      phúc ngọt ngào hãy gìn giữ và nuôi dưỡng tình yêu của
+                      chúng mình em nhé.
+                    </p>
+                    <div className="fixedContent">
+                      <h3>Người gửi: Lê Văn Do</h3>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
+          <i className="fa-solid fa-xmark" onClick={handleClickIcon}></i>
         </div>
-        <i className="fa-solid fa-xmark" onClick={handleClickIcon}></i>
       </div>
       <audio id="song">
         <source src={MySong} type="audio/mp3" />

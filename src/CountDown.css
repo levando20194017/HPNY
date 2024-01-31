@@ -1,13 +1,6 @@
-/* .count-down {
-    margin-top: 250px;
-    z-index: 2;
-} */
-
 .bg-countdown {
   z-index: 1;
 }
-
-/* Count down */
 
 @keyframes move-twink-back {
   from {

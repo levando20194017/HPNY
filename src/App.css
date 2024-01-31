@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-body {
+.page-happy-new-year {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -668,7 +668,7 @@ body {
   transition: 0.5s;
 }
 
-.box-button .button button:hover~span {
+.box-button .button button:hover ~ span {
   transform: translateY(-4px);
   background-color: rgb(186, 35, 62);
   box-shadow: -2px 2px 5px rgb(0, 0, 0, 0.5);
@@ -679,7 +679,7 @@ body {
   transition: 0.5s;
 }
 
-.box-button .button button:hover~span i {
+.box-button .button button:hover ~ span i {
   color: rgb(255, 41, 80);
   transform: rotate(360deg);
   filter: drop-shadow(0px 0px 10px rgb(255, 187, 199));
@@ -916,9 +916,11 @@ body {
   content: "";
   width: 100px;
   height: 100px;
-  background-image: radial-gradient(circle farthest-corner at center,
-      #373737 0%,
-      #5d0000 100%);
+  background-image: radial-gradient(
+    circle farthest-corner at center,
+    #373737 0%,
+    #5d0000 100%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -989,9 +991,11 @@ body {
   content: "";
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(circle farthest-corner at center,
-      #373737 0%,
-      #5d0000 100%);
+  background-image: radial-gradient(
+    circle farthest-corner at center,
+    #373737 0%,
+    #5d0000 100%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1062,9 +1066,11 @@ body {
   content: "";
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(circle farthest-corner at center,
-      #373737 0%,
-      #5d0000 100%);
+  background-image: radial-gradient(
+    circle farthest-corner at center,
+    #373737 0%,
+    #5d0000 100%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1135,9 +1141,11 @@ body {
   content: "";
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(circle farthest-corner at center,
-      #373737 0%,
-      #5d0000 100%);
+  background-image: radial-gradient(
+    circle farthest-corner at center,
+    #373737 0%,
+    #5d0000 100%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1677,7 +1685,7 @@ body {
   color: #fff;
 }
 
-.mail button>i {
+.mail button > i {
   transition: 0.5s;
 }
 
@@ -1702,7 +1710,7 @@ body {
 
 .mail:hover button i {
   cursor: pointer;
-  color: rgb(255, 41, 80);
+  color: greenyellow;
   filter: drop-shadow(0px 0px 10px rgb(255, 187, 199));
   animation: rotateMail 0.5s linear infinite;
 }
@@ -1729,14 +1737,14 @@ body {
   }
 }
 
-.mail:hover>.heart {
+.mail:hover > .heart {
   transform: translateY(-4px);
   background-color: rgb(186, 35, 62);
   box-shadow: -2px 2px 5px rgb(0, 0, 0, 0.5);
 }
 
-.mail:hover>.heart i {
-  color: rgb(255, 41, 80);
+.mail:hover > .heart i {
+  color: #fff;
   transform: rotate(360deg);
   filter: drop-shadow(0px 0px 10px rgb(255, 187, 199));
 }
@@ -1775,9 +1783,11 @@ body {
   height: 500px;
   display: flex;
   overflow: hidden;
-  background: linear-gradient(360deg,
-      rgb(206, 19, 53) 0%,
-      rgb(199, 20, 53) 100%);
+  background: linear-gradient(
+    360deg,
+    rgb(206, 19, 53) 0%,
+    rgb(199, 20, 53) 100%
+  );
 }
 
 .box-content .left {
@@ -1792,7 +1802,7 @@ body {
   align-items: center;
 }
 
-.left>img {
+.left > img {
   opacity: 0.4;
   width: 1000px;
   height: 600px;
@@ -1838,7 +1848,7 @@ body {
   z-index: -1;
 }
 
-.left .lanterns-content>img {
+.left .lanterns-content > img {
   width: 150px;
 }
 
