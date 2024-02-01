@@ -24,6 +24,8 @@ import BigFlower1 from "./assets/images/big-flower1.png";
 import BigFlower2 from "./assets/images/big-flower2.png";
 import ApricotBlossom from "./assets/images/apricot-blossom.png";
 import MySong from "./assets/images/nhac.mp3";
+
+import Meme2 from "./assets/videos/meme2.gif";
 import { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -309,22 +311,31 @@ function App() {
               <div className="content">
                 {!showHappy && (
                   <div>
-                    <div className="title">Cậu có muốn nhận lì xì không?</div>
+                    <div
+                      className="title"
+                      style={{ width: "100%", fontSize: "26px" }}
+                    >
+                      Cậu có muốn nhận lì xì không?
+                    </div>
+                    <img
+                      src={Meme2}
+                      width={250}
+                      height={250}
+                      draggable="false"
+                    />
                     <div>
-                      <div>
-                        <button
-                          className="slide-button"
-                          style={{
-                            position: "absolute",
-                            top: buttonPosition.top,
-                            left: buttonPosition.left,
-                          }}
-                          onMouseMove={handleMouseMove}
-                        >
-                          Có
-                        </button>
+                      <div
+                        onMouseMove={handleMouseMove}
+                        className="button-yes slide-button"
+                        style={{
+                          position: "absolute",
+                          top: buttonPosition.top,
+                          left: buttonPosition.left,
+                        }}
+                      >
+                        <button>Có</button>
                       </div>
-                      <div>
+                      <div className="button-no">
                         <button onClick={handleShowTextHappy}>Không</button>
                       </div>
                     </div>

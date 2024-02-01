@@ -2520,3 +2520,44 @@ h2 {
     top: -600px;
   }
 }
+.button-no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+.button-no button {
+  cursor: pointer;
+  font-size: 14px;
+  width: 80px;
+  height: 35px;
+  background-color: #ff652f;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 0px 19px 0px #aaa6a6;
+  border-radius: 20px;
+  border: 2px solid #fff;
+}
+.button-no button:hover {
+  animation: scale 1s ease-in-out;
+}
+.button-yes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+}
+.button-yes button {
+  font-size: 14px;
+  width: 60px;
+  height: 35px;
+  background-color: blue;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 0px 19px 0px #aaa6a6;
+  border-radius: 20px;
+  border: 2px solid #fff;
+}
