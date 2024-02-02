@@ -2525,6 +2525,9 @@ h2 {
   justify-content: center;
   align-items: center;
   margin-top: 5%;
+  position: absolute;
+  left: 30%;
+  top: 60%;
 }
 .button-no button {
   cursor: pointer;

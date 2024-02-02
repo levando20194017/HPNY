@@ -26,6 +26,7 @@ import ApricotBlossom from "./assets/images/apricot-blossom.png";
 import MySong from "./assets/images/nhac.mp3";
 
 import Meme2 from "./assets/videos/meme2.gif";
+import Meme4 from "./assets/videos/meme4.gif";
 import { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -81,8 +82,8 @@ function App() {
   };
 
   const [buttonPosition, setButtonPosition] = useState({
-    top: "50%",
-    left: "50%",
+    top: "64%",
+    left: "60%",
   });
   const slider3RightRef = useRef(null);
 
@@ -92,7 +93,7 @@ function App() {
     const slider3RightRect = slider3RightElement.getBoundingClientRect();
 
     const randomTop = Math.random() * (slider3RightRect.height - 40) + 40;
-    const randomLeft = Math.random() * (slider3RightRect.width - 80) + 40;
+    const randomLeft = Math.random() * (slider3RightRect.width - 40) + 40;
 
     setButtonPosition({
       top: `${randomTop}px`,
@@ -310,7 +311,7 @@ function App() {
             <div className="right" ref={slider3RightRef}>
               <div className="content">
                 {!showHappy && (
-                  <div>
+                  <div style={{ marginTop: "5%" }}>
                     <div
                       className="title"
                       style={{ width: "100%", fontSize: "26px" }}
@@ -318,6 +319,7 @@ function App() {
                       Cậu có muốn nhận lì xì không?
                     </div>
                     <img
+                      style={{ marginLeft: "8%", marginTop: "-10%" }}
                       src={Meme2}
                       width={250}
                       height={250}
@@ -325,15 +327,24 @@ function App() {
                     />
                     <div>
                       <div
-                        onMouseMove={handleMouseMove}
-                        className="button-yes slide-button"
-                        style={{
-                          position: "absolute",
-                          top: buttonPosition.top,
-                          left: buttonPosition.left,
-                        }}
+                        className="button-yes"
+                        // style={{
+                        //   position: "absolute",
+                        //   top: buttonPosition.top,
+                        //   left: buttonPosition.left,
+                        // }}
                       >
-                        <button>Có</button>
+                        <button
+                          onMouseMove={handleMouseMove}
+                          style={{
+                            position: "absolute",
+                            top: buttonPosition.top,
+                            left: buttonPosition.left,
+                          }}
+                          className="slide-button"
+                        >
+                          Có
+                        </button>
                       </div>
                       <div className="button-no">
                         <button onClick={handleShowTextHappy}>Không</button>
@@ -344,7 +355,7 @@ function App() {
                 {showHappy && (
                   <>
                     <div className="title">
-                      <h1 style={{ textAlign: "center" }}>&#129505;Gửi em!</h1>
+                      <h1 style={{ textAlign: "center" }}>&#129505;Gửi cậu!</h1>
                     </div>
                     <p>
                       Năm mới, anh chỉ chúc em được nhiều sức khỏe thôi. Còn về
