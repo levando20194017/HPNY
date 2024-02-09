@@ -331,13 +331,15 @@ function App() {
                       >
                         Bạn có muốn nhận lì xì không?
                       </div>
-                      <img
-                        style={{ marginLeft: "8%", marginTop: "-10%" }}
-                        src={Meme2}
-                        width={250}
-                        height={250}
-                        draggable="false"
-                      />
+                      <div style={{ textAlign: "center", marginTop: "15px" }}>
+                        <img
+                          style={{ marginTop: "-10%" }}
+                          src={Meme2}
+                          width={250}
+                          height={250}
+                          draggable="false"
+                        />
+                      </div>
                       <div>
                         <div
                           className="button-yes"
