@@ -269,3 +269,44 @@
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 540px) {
+  .count-down .wrapper h1 {
+    font-size: 30px;
+  }
+
+  .count-down .wrapper .textcontainer {
+    /* height: 20px;
+    width: 100%; */
+  }
+
+  .count-down .wrapper .textcontainer .particletext {
+    font-size: 30px;
+  }
+
+  .wrapper .box-time {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .wrapper .box-time .time {
+    width: 70px;
+    height: 70px;
+  }
+
+  .wrapper .box-time .time span {
+
+    font-size: 30px;
+  }
+
+  .box-time .time::before {
+    width: 70px;
+    height: 70px;
+    border: 5px solid rgb(251, 255, 0);
+  }
+
+  .wrapper .box-time p {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}

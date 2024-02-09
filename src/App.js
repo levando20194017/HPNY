@@ -92,18 +92,21 @@ function App() {
     const slider3RightElement = ReactDOM.findDOMNode(slider3RightRef.current);
     const slider3RightRect = slider3RightElement.getBoundingClientRect();
 
-    const randomTop = Math.random() * (slider3RightRect.height - 40) + 40;
-    const randomLeft = Math.random() * (slider3RightRect.width - 40) + 40;
+    const randomTop = Math.random() * (slider3RightRect.height) - 20;
+    const randomLeft = Math.random() * (slider3RightRect.width) - 40;
 
     setButtonPosition({
       top: `${randomTop}px`,
       left: `${randomLeft}px`,
     });
   };
-  const [showHappy, setShowHappy] = useState(false);
+  const [statusShow, setStatusShow] = useState("show1");
 
   const handleShowTextHappy = () => {
-    setShowHappy(true);
+    setStatusShow("show2");
+    setTimeout(() => {
+      setStatusShow("show3")
+    }, 3000)
   };
   return (
     <div className="page-happy-new-year">
@@ -310,11 +313,11 @@ function App() {
             </div>
             <div className="right" ref={slider3RightRef}>
               <div className="content">
-                {!showHappy && (
+                {statusShow === "show1" && (
                   <div style={{ marginTop: "5%" }}>
                     <div
                       className="title"
-                      style={{ width: "100%", fontSize: "26px" }}
+                      style={{ width: "100%", fontSize: "26px", height: "30px" }}
                     >
                       Cậu có muốn nhận lì xì không?
                     </div>
@@ -328,11 +331,11 @@ function App() {
                     <div>
                       <div
                         className="button-yes"
-                        // style={{
-                        //   position: "absolute",
-                        //   top: buttonPosition.top,
-                        //   left: buttonPosition.left,
-                        // }}
+                      // style={{
+                      //   position: "absolute",
+                      //   top: buttonPosition.top,
+                      //   left: buttonPosition.left,
+                      // }}
                       >
                         <button
                           onMouseMove={handleMouseMove}
@@ -352,20 +355,20 @@ function App() {
                     </div>
                   </div>
                 )}
-                {showHappy && (
+                {statusShow === "show2" && (
+                  <div style={{ marginTop: "15%" }}>
+                    <img src={Meme4} width={250} height={250} />
+                  </div>
+                )}
+                {statusShow === "show3" && (
                   <>
                     <div className="title">
                       <h1 style={{ textAlign: "center" }}>&#129505;Gửi cậu!</h1>
                     </div>
-                    <p>
-                      Năm mới, anh chỉ chúc em được nhiều sức khỏe thôi. Còn về
-                      hạnh phúc và niềm vui, anh mong rằng chính mình sẽ là
-                      người mang những điều đó đến với em. Yêu em nhiều! Năm mới
-                      đến rồi, một năm qua thật đặc biệt với anh và cả em nữa.
-                      Năm mới đến đồng nghĩa với việc anh lại được nối dài năm
-                      tháng yêu thương chăm sóc em. Anh chúc em tràn đầy hạnh
-                      phúc ngọt ngào hãy gìn giữ và nuôi dưỡng tình yêu của
-                      chúng mình em nhé.
+                    <p>Thật vui khi biết cậu đã thực sự trưởng thành và không còn muốn nhận lì xì.
+                      Năm cũ qua đi, hãy vứt hết tất cả muộn phiền, lo âu. Năm mới sang, mong rằng mọi ước mơ của cậu sẽ sớm trở
+                      thành hiện thực. Chúc cậu thật nhiều sức khỏe, nhiều niềm vui.
+                      Chúc mừng năm mới! An khang thịnh vượng, vạn sự như ý!
                     </p>
                     <div className="fixedContent">
                       <h3>Người gửi: Lê Văn Do</h3>

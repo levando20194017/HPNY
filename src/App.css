@@ -668,7 +668,7 @@
   transition: 0.5s;
 }
 
-.box-button .button button:hover ~ span {
+.box-button .button button:hover~span {
   transform: translateY(-4px);
   background-color: rgb(186, 35, 62);
   box-shadow: -2px 2px 5px rgb(0, 0, 0, 0.5);
@@ -679,7 +679,7 @@
   transition: 0.5s;
 }
 
-.box-button .button button:hover ~ span i {
+.box-button .button button:hover~span i {
   color: rgb(255, 41, 80);
   transform: rotate(360deg);
   filter: drop-shadow(0px 0px 10px rgb(255, 187, 199));
@@ -916,11 +916,9 @@
   content: "";
   width: 100px;
   height: 100px;
-  background-image: radial-gradient(
-    circle farthest-corner at center,
-    #373737 0%,
-    #5d0000 100%
-  );
+  background-image: radial-gradient(circle farthest-corner at center,
+      #373737 0%,
+      #5d0000 100%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -991,11 +989,9 @@
   content: "";
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(
-    circle farthest-corner at center,
-    #373737 0%,
-    #5d0000 100%
-  );
+  background-image: radial-gradient(circle farthest-corner at center,
+      #373737 0%,
+      #5d0000 100%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1066,11 +1062,9 @@
   content: "";
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(
-    circle farthest-corner at center,
-    #373737 0%,
-    #5d0000 100%
-  );
+  background-image: radial-gradient(circle farthest-corner at center,
+      #373737 0%,
+      #5d0000 100%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1141,11 +1135,9 @@
   content: "";
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(
-    circle farthest-corner at center,
-    #373737 0%,
-    #5d0000 100%
-  );
+  background-image: radial-gradient(circle farthest-corner at center,
+      #373737 0%,
+      #5d0000 100%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1685,7 +1677,7 @@
   color: #fff;
 }
 
-.mail button > i {
+.mail button>i {
   transition: 0.5s;
 }
 
@@ -1737,13 +1729,13 @@
   }
 }
 
-.mail:hover > .heart {
+.mail:hover>.heart {
   transform: translateY(-4px);
   background-color: rgb(186, 35, 62);
   box-shadow: -2px 2px 5px rgb(0, 0, 0, 0.5);
 }
 
-.mail:hover > .heart i {
+.mail:hover>.heart i {
   color: #fff;
   transform: rotate(360deg);
   filter: drop-shadow(0px 0px 10px rgb(255, 187, 199));
@@ -1783,11 +1775,9 @@
   height: 500px;
   display: flex;
   overflow: hidden;
-  background: linear-gradient(
-    360deg,
-    rgb(206, 19, 53) 0%,
-    rgb(199, 20, 53) 100%
-  );
+  background: linear-gradient(360deg,
+      rgb(206, 19, 53) 0%,
+      rgb(199, 20, 53) 100%);
 }
 
 .box-content .left {
@@ -1802,7 +1792,7 @@
   align-items: center;
 }
 
-.left > img {
+.left>img {
   opacity: 0.4;
   width: 1000px;
   height: 600px;
@@ -1848,7 +1838,7 @@
   z-index: -1;
 }
 
-.left .lanterns-content > img {
+.left .lanterns-content>img {
   width: 150px;
 }
 
@@ -2078,10 +2068,11 @@ h2 {
 .box-content .right .content .title h1 {
   margin-top: -40px;
   transition: 0.5s;
+  animation: title 2s forwards;
 }
 
 .slider3:hover .title h1 {
-  animation: title 2s forwards;
+  /* animation: title 2s forwards; */
 }
 
 @keyframes title {
@@ -2101,11 +2092,12 @@ h2 {
   font-family: "Dancing Script", cursive;
   opacity: 0;
   transition: 1s;
-}
-
-.slider3:hover .content p {
   animation: bodyContent 2s 1s forwards;
 }
+
+/* .slider3:hover .content p {
+  animation: bodyContent 2s 1s forwards;
+} */
 
 @keyframes bodyContent {
   0% {
@@ -2129,11 +2121,12 @@ h2 {
   font-family: "Dancing Script", cursive;
   padding: 20px 0px 0px 20px;
   margin-top: -50px;
-}
-
-.slider3:hover .content h3 {
   animation: fixedContent 2s 2s forwards;
 }
+
+/* .slider3:hover .content h3 {
+  animation: fixedContent 2s 2s forwards;
+} */
 
 @keyframes fixedContent {
   0% {
@@ -2520,6 +2513,7 @@ h2 {
     top: -600px;
   }
 }
+
 .button-no {
   display: flex;
   justify-content: center;
@@ -2529,6 +2523,7 @@ h2 {
   left: 30%;
   top: 60%;
 }
+
 .button-no button {
   cursor: pointer;
   font-size: 14px;
@@ -2542,9 +2537,11 @@ h2 {
   border-radius: 20px;
   border: 2px solid #fff;
 }
+
 .button-no button:hover {
   animation: scale 1s ease-in-out;
 }
+
 .button-yes {
   display: flex;
   justify-content: center;
@@ -2552,6 +2549,7 @@ h2 {
   width: 100px;
   height: 50px;
 }
+
 .button-yes button {
   font-size: 14px;
   width: 60px;
@@ -2563,4 +2561,42 @@ h2 {
   box-shadow: 0px 0px 19px 0px #aaa6a6;
   border-radius: 20px;
   border: 2px solid #fff;
+}
+
+@media screen and (max-width: 540px) {
+  .box_content {
+    display: none;
+  }
+
+  .slider3 .left {
+    display: none;
+  }
+
+  .slider3 .right {
+    width: 100%;
+  }
+
+  .slider3 .right .title {
+    height: 40px !important;
+  }
+
+  .slider3 .right .title h1 {
+    font-size: 30px !important;
+    height: 40px;
+  }
+
+  .slider3 .right p {
+    font-size: 20px !important;
+  }
+
+  .slider3 .right .fixedContent h3 {
+    font-size: 25px !important;
+    text-align: right;
+  }
+
+  .box-content .right .content .fixedContent {
+    margin-top: 20px;
+    width: 300px !important;
+    text-align: right;
+  }
 }

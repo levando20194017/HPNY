@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from "react";
 import fireworkGif from "./assets/videos/firework.gif";
 import "animate.css";
+import { useNavigate } from "react-router-dom";
 
 const Fireworks = () => {
   const [isShowFirework, setIsShowFirework] = useState(true);
+  const navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
       setIsShowFirework(false);
     }, 20000);
   }, []);
+  useEffect(() => {
+    if (!isShowFirework) {
+      navigate("/happy-new-year")
+    }
+  }, [isShowFirework])
   return (
-    <div style={{ backgroundColor: "black" }}>
-      {isShowFirework ? (
-        <img
-          src={fireworkGif}
-          alt=""
-          style={{ width: "100%", height: "100%" }}
-        />
-      ) : (
+    <div style={{ backgroundColor: "black", height: "100vh", overflow: "hidden" }}>
+      <img
+        src={fireworkGif}
+        alt=""
+        style={{ width: "100%", height: "100%" }}
+      />
+      {/* ) : (
         <div className="text-happy">
           <div>
             <h1 class="animate__animated animate__fadeInUp">
@@ -29,7 +35,7 @@ const Fireworks = () => {
             </h1>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

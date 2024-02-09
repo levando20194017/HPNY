@@ -6,16 +6,16 @@ import "animate.css";
 
 function CountDown() {
   const navigate = useNavigate();
-  const [isAnimating, setIsAnimating] = useState(false);
+  // const [isAnimating, setIsAnimating] = useState(false);
   const [effectText, setEffectText] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => setIsAnimating(false), 950);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIsAnimating(true);
+  //     setTimeout(() => setIsAnimating(false), 950);
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,16 +36,18 @@ function CountDown() {
     hours %= 24;
     minutes %= 60;
     seconds %= 60;
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+    if (D > 0) {
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
 
     if (D < 0) {
       clearInterval(x);
       navigate("/firework");
     }
-  }, 0.1);
+  }, 50);
 
   return (
     <div className="count-down">
