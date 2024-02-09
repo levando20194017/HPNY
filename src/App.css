@@ -2568,6 +2568,14 @@ h2 {
     display: none;
   }
 
+  .box-button button {
+    margin-bottom: 85%;
+  }
+
+  .box-button span {
+    margin-bottom: 85%;
+  }
+
   .slider3 .left {
     display: none;
   }
@@ -2592,6 +2600,7 @@ h2 {
   .slider3 .right .fixedContent h3 {
     font-size: 25px !important;
     text-align: right;
+    padding-right: 20px;
   }
 
   .box-content .right .content .fixedContent {

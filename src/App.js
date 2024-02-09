@@ -319,7 +319,7 @@ function App() {
                       className="title"
                       style={{ width: "100%", fontSize: "26px", height: "30px" }}
                     >
-                      Cậu có muốn nhận lì xì không?
+                      Bạn có muốn nhận lì xì không?
                     </div>
                     <img
                       style={{ marginLeft: "8%", marginTop: "-10%" }}
@@ -363,11 +363,11 @@ function App() {
                 {statusShow === "show3" && (
                   <>
                     <div className="title">
-                      <h1 style={{ textAlign: "center" }}>&#129505;Gửi cậu!</h1>
+                      <h1 style={{ textAlign: "center" }}>&#129505;Gửi bạn!</h1>
                     </div>
-                    <p>Thật vui khi biết cậu đã thực sự trưởng thành và không còn muốn nhận lì xì.
-                      Năm cũ qua đi, hãy vứt hết tất cả muộn phiền, lo âu. Năm mới sang, mong rằng mọi ước mơ của cậu sẽ sớm trở
-                      thành hiện thực. Chúc cậu thật nhiều sức khỏe, nhiều niềm vui.
+                    <p>Thật vui khi biết bạn đã thực sự trưởng thành và không còn muốn nhận lì xì.
+                      Năm cũ qua đi, hãy vứt hết tất cả muộn phiền, lo âu. Năm mới sang, mong rằng mọi ước mơ của bạn sẽ sớm trở
+                      thành hiện thực. Chúc bạn thật nhiều sức khỏe, nhiều niềm vui.
                       Chúc mừng năm mới! An khang thịnh vượng, vạn sự như ý!
                     </p>
                     <div className="fixedContent">

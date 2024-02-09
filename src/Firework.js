@@ -17,7 +17,7 @@ const Fireworks = () => {
     }
   }, [isShowFirework])
   return (
-    <div style={{ backgroundColor: "black", height: "100vh", overflow: "hidden" }}>
+    <div style={{ backgroundColor: "black", height: "100vh", width: "100%", overflow: "hidden" }}>
       <img
         src={fireworkGif}
         alt=""
