@@ -1,4 +1,5 @@
 import "./App.css";
+import { useSpring, animated } from "@react-spring/web";
 import Bgr from "./assets/images/bgr.jpg";
 import CircularPattern from "./assets/images/circular-pattern.png";
 import Pattern from "./assets/images/pattern.png";
@@ -108,6 +109,14 @@ function App() {
       setStatusShow("show3")
     }, 3000)
   };
+
+  const [state, toggle] = useState(true);
+  const { x } = useSpring({
+    from: { x: 0 },
+    x: state ? 1 : 0,
+    config: { duration: 1000 },
+  });
+
   return (
     <div className="page-happy-new-year">
       <div className="box-slider">
@@ -314,43 +323,50 @@ function App() {
             <div className="right" ref={slider3RightRef}>
               <div className="content">
                 {statusShow === "show1" && (
-                  <div style={{ marginTop: "5%" }}>
-                    <div
-                      className="title"
-                      style={{ width: "100%", fontSize: "26px", height: "30px" }}
-                    >
-                      Bạn có muốn nhận lì xì không?
-                    </div>
-                    <img
-                      style={{ marginLeft: "8%", marginTop: "-10%" }}
-                      src={Meme2}
-                      width={250}
-                      height={250}
-                      draggable="false"
-                    />
-                    <div>
+                  <div onClick={() => toggle(!state)} style={{ height: "100%", width: "100%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <div
-                        className="button-yes"
-                      // style={{
-                      //   position: "absolute",
-                      //   top: buttonPosition.top,
-                      //   left: buttonPosition.left,
-                      // }}
+                        className="title"
+                        style={{ width: "100%", fontSize: "26px", height: "30px" }}
                       >
-                        <button
-                          onMouseMove={handleMouseMove}
-                          style={{
-                            position: "absolute",
-                            top: buttonPosition.top,
-                            left: buttonPosition.left,
-                          }}
-                          className="slide-button"
-                        >
-                          Có
-                        </button>
+                        Bạn có muốn nhận lì xì không?
                       </div>
-                      <div className="button-no">
-                        <button onClick={handleShowTextHappy}>Không</button>
+                      <img
+                        style={{ marginLeft: "8%", marginTop: "-10%" }}
+                        src={Meme2}
+                        width={250}
+                        height={250}
+                        draggable="false"
+                      />
+                      <div>
+                        <div
+                          className="button-yes"
+                        >
+                          <button
+                            onMouseMove={handleMouseMove}
+                            style={{
+                              position: "absolute",
+                              top: buttonPosition.top,
+                              left: buttonPosition.left,
+                            }}
+                            className="slide-button"
+                          >
+                            Có
+                          </button>
+                        </div>
+                        <div className="button-no">
+                          <animated.div
+                            className="text"
+                            style={{
+                              scale: x.to({
+                                range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                                output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                              }),
+                            }}
+                          >
+                            <button onClick={handleShowTextHappy}>Không</button>
+                          </animated.div>
+                        </div>
                       </div>
                     </div>
                   </div>
