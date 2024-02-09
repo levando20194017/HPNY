@@ -21,7 +21,7 @@ const Fireworks = () => {
       <img
         src={fireworkGif}
         alt=""
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
       {/* ) : (
         <div className="text-happy">
